@@ -1,5 +1,6 @@
-const app = require('./app')
+const {startApolloServer} = require('./app')
 
-const PORT = process.env.PORT || 3000
-
-app.listen(PORT, () => console.log("server on port 3000"))
+const {typeDefs, resolvers} = require('./schema')
+// const PORT = process.env.PORT || 3000
+startApolloServer(typeDefs, resolvers)
+// app.listen(PORT, () => console.log("server on port 3000"))
